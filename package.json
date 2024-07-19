@@ -3,6 +3,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
+        "dev:mobile": "vite  --host=192.168.43.193",
         "build": "vite build"
     },
     "devDependencies": {
