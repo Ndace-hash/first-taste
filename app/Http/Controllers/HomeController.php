@@ -10,6 +10,9 @@ class HomeController extends Controller
     //
 
     public function show(){
-        return Inertia::render('Home');
+        $user = ['firstName'=>'Zaccheaus','lastName'=>'Yisa'];
+        return Inertia::render('Home', [
+            'user' => $user
+        ]);
     }
 }

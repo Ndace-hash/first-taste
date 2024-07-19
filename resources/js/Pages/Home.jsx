@@ -1,13 +1,16 @@
 import React from "react";
 import { Head } from "@inertiajs/react";
 
-const HomePage = () => {
+import AppNavbar from "../Components/AppNavbar";
+
+const HomePage = ({ user }) => {
     return (
-        <section className="text-center h-screen">
+        <section className="text-center h-screen ">
             <Head title="LaraCrest - The Journey" />
-            <h1 className="font-bold text-4xl underline py-4 shadow-md">
-                Home Page
-            </h1>
+            <AppNavbar />
+            <p className="text-sm mt-4 font-semibold">
+                Welcom back, {`${user.firstName} ${user.lastName}`}.
+            </p>
         </section>
     );
 };
