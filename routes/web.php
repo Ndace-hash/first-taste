@@ -1,6 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 
-Route::get('/', [UserController::class, 'show']);
+Route::get('/', [HomeController::class, 'show']);
