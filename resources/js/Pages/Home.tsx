@@ -8,7 +8,7 @@ const HomePage = ({ user }) => {
     return (
         <section className="h-screen ">
             <Head title="LaraCrest - The Journey" />
-            <AppNavbar />
+            <AppNavbar loggedInUser={user.lastName} />
             <div className="px-2 py-4 flex flex-col items-center">
                 <div className="w-[100px] h-[100px] overflow-hidden flex items-center justify-center rounded-full border-2 shadow-sm border-red-300">
                     <img src={passport} alt="" className="w-full scale-75" />
