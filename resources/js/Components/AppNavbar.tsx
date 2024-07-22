@@ -1,11 +1,19 @@
-import React from "react";
+import React, { FC } from "react";
 import { Link } from "@inertiajs/react";
 
-const AppNavbar = () => {
+type NavbarProp = {
+    loggedInUser?: unknown;
+};
+
+const AppNavbar: FC<NavbarProp> = ({ loggedInUser }) => {
     const routes = [
         {
-            name: "About",
-            path: "/about",
+            name: "Posts",
+            path: "/posts",
+        },
+        {
+            name: "Create",
+            path: "/posts/create",
         },
         { name: "Contact", path: "/contact" },
     ];
