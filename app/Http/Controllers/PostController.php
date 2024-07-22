@@ -16,4 +16,9 @@ class PostController extends Controller
             'user' => $user
         ]);
     }
+
+    public function store()
+    {
+        return Inertia::render('Post/Create');
+    }
 }
