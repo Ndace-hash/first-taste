@@ -1,11 +1,12 @@
-import React, { FormEvent, useState } from "react";
-import { router, useForm } from "@inertiajs/react";
+import React, { FormEvent } from "react";
+import { useForm } from "@inertiajs/react";
 
 const CreatePostPage = () => {
-    const { data, post, setData } = useForm({ title: "", content: "" });
+    const { data, post, setData, reset } = useForm({ title: "", content: "" });
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         post("/posts/create");
+        reset("title", "content");
     };
 
     return (
