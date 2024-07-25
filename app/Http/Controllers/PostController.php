@@ -12,9 +12,9 @@ class PostController extends Controller
 
     public function show()
     {
-        $user = ['firstName' => 'Zaccheaus', 'lastName' => 'Yisa'];
+        $posts = Post::all();
         return Inertia::render('Home', [
-            'user' => $user
+            'posts' => $posts
         ]);
     }
 
