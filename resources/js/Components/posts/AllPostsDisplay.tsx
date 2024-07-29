@@ -7,15 +7,15 @@ const AllPostDisplay = () => {
         <section className="mx-3 w-full py-4">
             <h3 className="font-bold">All Blog Posts</h3>
             <div className="flex flex-wrap gap-x-8 gap-y-2 py-4 border-b border-slate-400">
-                <PostCard className="max-w-[320px]" />
-                <PostCard className="max-w-[320px]" />
-                <PostCard className="max-w-[320px]" />
-                <PostCard className="max-w-[320px]" />
-                <PostCard className="max-w-[320px]" />
-                <PostCard className="max-w-[320px]" />
-                <PostCard className="max-w-[320px]" />
-                <PostCard className="max-w-[320px]" />
-                <PostCard className="max-w-[320px]" />
+                <PostCard className="max-w-[350px] md:max-w-[320px]" />
+                <PostCard className="max-w-[350px] md:max-w-[320px]" />
+                <PostCard className="max-w-[350px] md:max-w-[320px]" />
+                <PostCard className="max-w-[350px] md:max-w-[320px]" />
+                <PostCard className="max-w-[350px] md:max-w-[320px]" />
+                <PostCard className="max-w-[350px] md:max-w-[320px]" />
+                <PostCard className="max-w-[350px] md:max-w-[320px]" />
+                <PostCard className="max-w-[350px] md:max-w-[320px]" />
+                <PostCard className="max-w-[350px] md:max-w-[320px]" />
             </div>
             <div className="flex justify-between items-center py-6 px-2">
                 <button className=" flex gap-2 items-center justify-center">

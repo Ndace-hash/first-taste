@@ -23,7 +23,7 @@ const MobileNavbar: FC<NavbarProp> = ({ loggedInUser, className }) => {
     ];
     return (
         <nav
-            className={`flex justify-between items-center py-3 h-20 ${className} `}
+            className={`flex justify-between items-center py-3 h-20 overflow-x-hidden ${className} `}
         >
             <div className="ms-2">
                 <h1 className="font-black text-black uppercase">
@@ -41,12 +41,12 @@ const MobileNavbar: FC<NavbarProp> = ({ loggedInUser, className }) => {
                 <span className="block bg-black w-[20px] h-[3px]"></span>
             </button>
             <ul
-                className={`flex flex-col justify-center items-center gap-4 ${
-                    openNav ? "show-navbar" : "hide-navbar"
+                className={` flex-col justify-center items-center gap-4 ${
+                    openNav ? "show-navbar flex" : "hide-navbar"
                 }`}
             >
                 <h1 className="font-black text-white text-3xl mb-4 uppercase">
-                    <Link href="/">LaraCrest</Link>
+                    LaraCrest
                 </h1>
 
                 {routes.map((route) => (
@@ -68,7 +68,10 @@ const MobileNavbar: FC<NavbarProp> = ({ loggedInUser, className }) => {
                         Login
                     </Link>
                 </li>
-                <button className="w-[50px] h-[50px] absolute bottom-8 rounded-full flex flex-col items-center justify-center" onClick={()=>setOpenNav(!openNav)} >
+                <button
+                    className="w-[50px] h-[50px] absolute bottom-8 rounded-full flex flex-col items-center justify-center"
+                    onClick={() => setOpenNav(!openNav)}
+                >
                     <span className="bg-white min-w-[30px] min-h-[3px] block rotate-45 translate-y-[2px]"></span>
                     <span className="bg-white min-w-[30px] min-h-[3px] block -rotate-45 -translate-y-[2px]"></span>
                 </button>

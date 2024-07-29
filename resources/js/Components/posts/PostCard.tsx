@@ -20,10 +20,10 @@ const handleDate = (date: string) => {
 };
 const PostCard: FC<PostProp> = ({ columns = 1, className = "" }) => {
     return (
-        <Link href={`/posts/`} className="w-max">
+        <Link href={`/posts/`} className="md:w-max">
             <article
-                className={` rounded-md my-2 mb-2 gap-2 mx-auto grid grid-cols-2 grid-rows-2 ${
-                    columns == 1 ? "w-full" : "w-[600px]"
+                className={` rounded-md my-2 mb-2 gap-2 mx-auto md:grid grid-cols-2 grid-rows-2 ${
+                    columns == 1 ? "md:w-full" : "md:w-[600px]"
                 } ${className}`}
             >
                 <div
