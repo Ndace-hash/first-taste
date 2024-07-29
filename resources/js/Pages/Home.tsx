@@ -11,8 +11,8 @@ const HomePage: FC<PageProp> = ({ posts }) => {
     return (
         <AuthenticatedLayout>
             <Head title="LaraCrest" />
-            <section className="flex flex-col items-center">
-                <h1 className="font-bold uppercase text-[14rem] text-center py-4 border-y border-slate-400 flex items-center justify-center px-6 w-full leading-none">
+            <section className="flex flex-col items-center px-1">
+                <h1 className="font-bold uppercase text-5xl sm:text-6xl md:text-9xl xl:text-[14rem] text-center py-4 border-y border-slate-400 flex items-center justify-center px-6 w-full leading-none">
                     The Blog
                 </h1>
                 <PostDisplay posts={posts as IPost[]} />
