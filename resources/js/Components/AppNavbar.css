@@ -1,0 +1,49 @@
+.show span:nth-child(3) {
+    opacity: 0;
+}
+
+.show span:nth-child(1) {
+    transition: all 500ms ease-in;
+    transform: rotateZ(45deg) translateY(5px);
+}
+.show span:nth-child(2) {
+    transition: all 500ms ease-in;
+    transform: rotateZ(-45deg) translateY(-5px);
+}
+.not-show span:nth-child(3) {
+    opacity: 1;
+}
+
+.not-show span:nth-child(1) {
+    transition: all 100ms ease-in;
+    transform: rotateZ(0deg) translateY(0px);
+}
+.not-show span:nth-child(2) {
+    transition: all 100ms ease-in;
+    transform: rotateZ(0deg) translateY(0px);
+}
+
+.show-navbar {
+    top: 0;
+    background-color: black;
+    color: white;
+    opacity: 1;
+    position: absolute;
+    width: 100vw;
+    left: 0%;
+    inset: 0;
+    transition: all 200ms ease-in;
+    z-index: 50;
+}
+.hide-navbar {
+    inset: 0;
+    top: 0;
+    z-index: 50;
+    transition: all 400ms ease-in;
+    position: absolute;
+    left: 100%;
+    background-color: black;
+    color: white;
+    opacity: 0;
+    width: 100vw;
+}
