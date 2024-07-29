@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import AppNavbar from "../Components/AppNavbar";
+import AppFooter from "../Components/AppFooter";
 
 type AuthenticatedPageProp = {
     children: ReactNode;
@@ -7,9 +8,10 @@ type AuthenticatedPageProp = {
 
 const AuthenticatedLayout: FC<AuthenticatedPageProp> = ({ children }) => {
     return (
-        <section>
+        <section className="max-w-[1200px] mx-auto">
             <AppNavbar />
             <>{children}</>
+            <AppFooter />
         </section>
     );
 };
