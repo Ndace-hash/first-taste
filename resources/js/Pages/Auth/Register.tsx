@@ -29,7 +29,7 @@ const RegisterPage = () => {
             <section className="max-w-[1020px] mx-auto h-screen overflow-hidden flex items-center justify-center">
                 <form
                     onSubmit={handleSubmit}
-                    className="w-[50%] px-4 py-4 flex flex-col gap-3"
+                    className="lg:w-[50%] px-4 py-4 flex flex-col gap-3"
                 >
                     <div className="max-w-[800px] mb-4 flex flex-col gap-2">
                         <h2 className="font-semibold text-xl">
@@ -41,7 +41,7 @@ const RegisterPage = () => {
                             don't forget to verify your account through mail.
                         </p>
                     </div>
-                    <div className="flex min-w-full gap-4">
+                    <div className="flex min-w-full gap-4 flex-col md:flex-row">
                         <div className="flex flex-col flex-grow gap-2">
                             <label className="text-xs text-slate-600">
                                 First Name
@@ -131,11 +131,11 @@ const RegisterPage = () => {
                     </div>
                     <button
                         type="submit"
-                        className="self-end bg-slate-950 text-white text-xs py-4 px-6 rounded flex items-center justify-center leading-none"
+                        className="lg:self-end bg-slate-950 text-white text-xs py-4 px-6 rounded flex items-center justify-center leading-none"
                     >
                         Continue
                     </button>
-                    <p className="self-end text-xs">
+                    <p className=" self-center lg:self-end text-xs">
                         Already registered?{" "}
                         <a
                             href="/auth/login"
