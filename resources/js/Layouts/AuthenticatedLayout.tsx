@@ -8,7 +8,7 @@ type AuthenticatedPageProp = {
 
 const AuthenticatedLayout: FC<AuthenticatedPageProp> = ({ children }) => {
     return (
-        <section className="max-w-[1200px] w-screen mx-auto overflow-x-hidden">
+        <section className="max-w-[1200px] w-screen mx-auto overflow-x-hidden px-2 lg:px-5">
             <AppNavbar />
             <>{children}</>
             <AppFooter />
