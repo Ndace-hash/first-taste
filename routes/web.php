@@ -15,6 +15,8 @@ Route::post('/auth/login', [AuthenticateUserController::class, 'store']);
 
 Route::get('/posts/create', [PostController::class, 'store'])->name('posts.create');
 Route::post('/posts/create', [PostController::class, 'createPost'])->name('posts.store');
+Route::get('/posts/{id}', [PostController::class, 'viewDetail'])->name('post.detail');
 Route::get('/auth/logout', [AuthenticateUserController::class, 'logout']);
+
 Route::middleware(['auth'])->group(function () {
 });
