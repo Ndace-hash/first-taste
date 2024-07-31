@@ -8,6 +8,7 @@ const LoginPage = () => {
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         post("/auth/login");
+        if (!errors) reset("email", "password");
     };
 
     return (
@@ -28,6 +29,12 @@ const LoginPage = () => {
                             Sign into account to keep track of your posts, and
                             activities and explore topic of your interest.
                         </p>
+
+                        {(errors.email || errors.password) && (
+                            <p className="bg-red-400 text-white font-bold py-3 px-4 capitalize ">
+                                Incorrect Email or Password
+                            </p>
+                        )}
                     </div>
                     <div className="flex flex-col gap-2">
                         <label className="text-xs text-slate-600">Email</label>
