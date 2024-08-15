@@ -17,7 +17,9 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'title' => fake()->text(100),
+            'content' => fake()->realText(1000),
+            'img_url' => fake()->imageUrl()
         ];
     }
 }

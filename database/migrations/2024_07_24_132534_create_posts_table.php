@@ -11,9 +11,10 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->id();
+            $table->id()->primary()->unique();
             $table->string('title')->default('');
             $table->longText('content')->nullable();
+            $table->string('img_url')->default('');
             $table->timestamps();
         });
     }
