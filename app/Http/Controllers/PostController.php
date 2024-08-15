@@ -36,8 +36,9 @@ class PostController extends Controller
 
     public function viewDetail(Request $request)
     {
+        $post = Post::find($request->id);
         return Inertia::render('Post/[id]', [
-            'id' => $request->id
+            'post' => $post
         ]);
     }
 }
