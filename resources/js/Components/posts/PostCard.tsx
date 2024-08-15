@@ -4,7 +4,7 @@ import { Link } from "@inertiajs/react";
 import BlogImage from "../../../images/blog1.png";
 import LinkTo from "../../../images/icon/arrow-up-right.svg";
 type PostProp = {
-    post?: IPost;
+    post: IPost;
     columns?: number;
     className?: string;
 };
@@ -18,9 +18,9 @@ const handleDate = (date: string) => {
         ddmmyy: `${dateArray[2]} ${dateArray[1]} ${dateArray[0]}`,
     };
 };
-const PostCard: FC<PostProp> = ({ columns = 1, className = "" }) => {
+const PostCard: FC<PostProp> = ({ columns = 1, className = "", post }) => {
     return (
-        <Link href={`/posts/`} className="md:w-max">
+        <Link href={`/posts/${post.id}`} className="md:w-max">
             <article
                 className={` rounded-md my-2 mb-2 gap-2 mx-auto md:grid grid-cols-2 grid-rows-2 ${
                     columns == 1 ? "md:w-full" : "md:w-[600px]"
@@ -31,12 +31,12 @@ const PostCard: FC<PostProp> = ({ columns = 1, className = "" }) => {
                         backgroundPosition: "center",
                         backgroundSize: "cover",
                     }}
-                    className={`flex items-center justify-center overflow-hidden w-full ${
-                        columns == 1 ? "col-span-2" : "row-span-2"
+                    className={`flex items-center justify-center overflow-hidden w-full h-full ${
+                        columns == 1 ? "col-span-2 row-span-1" : "row-span-2"
                     }`}
                 >
                     <img
-                        src={BlogImage}
+                        src={post?.img_url}
                         alt=""
                         className="w-full h-full object-cover object-center"
                     />
@@ -50,15 +50,10 @@ const PostCard: FC<PostProp> = ({ columns = 1, className = "" }) => {
                         Olivia Rhye • 1 Jan 2023
                     </span>
                     <div className="flex justify-between">
-                        <h2 className="font-semibold text-xl">
-                            UX review presentations
-                        </h2>
+                        <h2 className="font-semibold text-xl">{post?.title}</h2>
                         <img src={LinkTo} alt="" className="cursor-pointer" />
                     </div>
-                    <p className="text-sm">
-                        How do you create compelling presentations that wow your
-                        colleagues and impress your managers?
-                    </p>
+                    <p className="text-sm">{post?.content.slice(0, 70)}...</p>
                     <span className="text-[.8rem] text-[#6941C6] bg-[#6941c61e] py-1 px-3 rounded-full flex items-center justify-center flex-grow-0 w-max">
                         Design
                     </span>

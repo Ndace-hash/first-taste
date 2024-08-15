@@ -7,7 +7,12 @@ import PostDisplay from "../Components/posts/PostDisplay";
 import { IPost } from "../types/Post";
 import AllPostDisplay from "../Components/posts/AllPostsDisplay";
 
-const HomePage: FC<PageProp> = ({ posts }) => {
+type Prop = {
+    posts: IPost[];
+};
+
+const HomePage: FC<Prop> = ({ posts }) => {
+    console.log(posts);
     return (
         <AuthenticatedLayout>
             <Head title="LaraCrest" />
@@ -16,7 +21,7 @@ const HomePage: FC<PageProp> = ({ posts }) => {
                     The Blog
                 </h1>
                 <PostDisplay posts={posts as IPost[]} />
-                <AllPostDisplay />
+                <AllPostDisplay posts={posts as IPost[]} />
             </section>
         </AuthenticatedLayout>
     );

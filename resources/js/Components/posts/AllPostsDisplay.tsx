@@ -1,21 +1,20 @@
-import React from "react";
+import React, { FC } from "react";
 import PostCard from "./PostCard";
 import Arrow from "../../../images/icon/arrow-left.svg";
+import { IPost } from "../../types/Post";
 
-const AllPostDisplay = () => {
+const AllPostDisplay: FC<{ posts: IPost[] }> = ({ posts }) => {
     return (
         <section className="mx-3 w-full py-4">
             <h3 className="font-bold">All Blog Posts</h3>
             <div className="flex flex-wrap gap-x-8 gap-y-2 py-4 border-b border-slate-400">
-                <PostCard className="max-w-[350px] md:max-w-[320px]" />
-                <PostCard className="max-w-[350px] md:max-w-[320px]" />
-                <PostCard className="max-w-[350px] md:max-w-[320px]" />
-                <PostCard className="max-w-[350px] md:max-w-[320px]" />
-                <PostCard className="max-w-[350px] md:max-w-[320px]" />
-                <PostCard className="max-w-[350px] md:max-w-[320px]" />
-                <PostCard className="max-w-[350px] md:max-w-[320px]" />
-                <PostCard className="max-w-[350px] md:max-w-[320px]" />
-                <PostCard className="max-w-[350px] md:max-w-[320px]" />
+                {posts.map((post) => (
+                    <PostCard
+                        className="max-w-[350px] md:max-w-[320px]"
+                        post={post}
+                        key={post.id}
+                    />
+                ))}
             </div>
             <div className="flex justify-between items-center py-6 px-2">
                 <button className=" flex gap-2 items-center justify-center">
